@@ -25,43 +25,43 @@ POST http://api-spell-checker.cloud.toast.com/spell-checker/v1.0/appkeys/{appkey
 ```
 {
     "query": String,
-    "maxSuggestion": int
+    "maxSuggestion": Integer
 }
 ```
 
-| 이름 | 타입 | 설명 |
-|:---|:---|:---|
-| query | String | 질의 (최대 500자) |
-| maxSuggestion | int | 반환 받을 추천 교정어의 최대 개수 (값 범위: 0~16) |
+| 이름 | 타입 | 필수 | 설명 |
+|:---|:---|:---|:---|
+| query | String | O | 질의 (최대 500자) |
+| maxSuggestion | Integer | O | 반환 받을 추천 교정어의 최대 개수 (값 범위: 0~16) |
 
 [Response]
 
 ```
 {
     "header": {
-        "isSuccessful": boolean,
-        "resultCode": int,
+        "isSuccessful": Boolean,
+        "resultCode": Integer,
         "resultMessage": String
     },
     "body": {
         "query": String,
-        "maxSuggestion": int,
+        "maxSuggestion": Integer,
         "errata" : [
             {
                 "erratum": String,
-                "position": int,
-                "length": int,
+                "position": Integer,
+                "length": Integer,
                 "suggestions": [
                     {
                         "suggestion": String,
-                        "type": int
+                        "type": Integer
                     },
                     ...
                 ]
             },
             ...
         ],
-        "elapsedTime": int
+        "elapsedTime": Integer
     }
 }
 ```
@@ -69,15 +69,15 @@ POST http://api-spell-checker.cloud.toast.com/spell-checker/v1.0/appkeys/{appkey
 | 이름 | 타입 | 설명 |
 |:---|:---|:---|
 | query | String | 질의 |
-| maxSuggestion | int | 추천 교정어 최대 개수 (값 범위: 0~16) |
+| maxSuggestion | Integer | 추천 교정어 최대 개수 (값 범위: 0~16) |
 | errata | List | 검사된 오탈자 목록 |
 | erratum | String | 검사된 오탈자 |
-| position | int | 오탈자의 바이트 시작 위치 |
-| length | int | 오탈자의 바이트 길이 (문자 당 길이: 영문 - 1, 한글 - 3) |
+| position | Integer | 오탈자의 바이트 시작 위치 |
+| length | Integer | 오탈자의 바이트 길이 (문자 당 길이: 영문 - 1, 한글 - 3) |
 | suggestions | List | 오탈자의 교정 추천어 목록 (추천 랭킹 오름차순 정렬) |
 | suggestion | String | 오탈자의 교정 추천어 |
-| type | int | 추천어의 교정 방식<br>1: 띄어쓰기<br>2: 맞춤법<br>3: 사전 추천어 |
-| elaspedTime | int | api 오탈자 분석 소요 시간 |
+| type | Integer | 추천어의 교정 방식<br>1: 띄어쓰기<br>2: 맞춤법<br>3: 사전 추천어 |
+| elaspedTime | Integer | api 오탈자 분석 소요 시간 |
 
 
 ## 응답속도를 높이기 위한 가이드

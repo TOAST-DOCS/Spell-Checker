@@ -23,56 +23,56 @@ Spelling check does not support typos in English or other languages.
 
     {
         "query": String,
-        "maxSuggestion": int
+        "maxSuggestion": Integer
     }
 
-| Name          | Type   | Description                                                        |
-|---------------|--------|--------------------------------------------------------------------|
-| query         | String | Inquiry (Maximum 500 letters)                                      |
-| maxSuggestion | int    | Maximum number of recommended words for return (Value range: 0~16) |
+| Name          | Type    | Required | Description                                                        |
+|---------------|---------|----------|--------------------------------------------------------------------|
+| query         | String  | O        | Inquiry (Maximum 500 letters)                                      |
+| maxSuggestion | Integer | O        | Maximum number of recommended words for return (Value range: 0~16) |
 
 \[Response\]
 
     {
         "header": {
-            "isSuccessful": boolean,
-            "resultCode": int,
+            "isSuccessful": Boolean,
+            "resultCode": Integer,
             "resultMessage": String
         },
         "body": {
             "query": String,
-            "maxSuggestion": int,
+            "maxSuggestion": Integer,
             "errata" : [
                 {
                     "erratum": String,
-                    "position": int,
-                    "length": int,
+                    "position": Integer,
+                    "length": Integer,
                     "suggestions": [
                         {
                             "suggestion": String,
-                            "type": int
+                            "type": Integer
                         },
                         ...
                     ]
                 },
                 ...
             ],
-            "elapsedTime": int
+            "elapsedTime": Integer
         }
     }
 
-| Name          | Type   | Description                                                                            |
-|---------------|--------|----------------------------------------------------------------------------------------|
-| query         | String | Inquiry                                                                                |
-| maxSuggestion | int    | Max number of recommendation words (value range: 0~16)                                 |
-| errata        | List   | Examined typo list                                                                     |
-| erratum       | String | Examined typo                                                                          |
-| position      | int    | Typo’s start location of byte                                                          |
-| length        | int    | Typo’s byte length (Length per letter: English - 1, Korean - 3)                        |
-| suggestions   | List   | List of recommended words for typos (Recommendation ranking ascending order)           |
-| suggestion    | String | Recommended words for typos                                                            |
-| type          | int    | Correction method of recommended words 1: space2: spelling3: dictionary recommendation |
-| elaspedTime   | int    | api time required for typo analysis                                                    |
+| Name          | Type    | Description                                                                            |
+|---------------|---------|----------------------------------------------------------------------------------------|
+| query         | String  | Inquiry                                                                                |
+| maxSuggestion | Integer | Max number of recommendation words (value range: 0~16)                                 |
+| errata        | List    | Examined typo list                                                                     |
+| erratum       | String  | Examined typo                                                                          |
+| position      | Integer | Typo’s start location of byte                                                          |
+| length        | Integer | Typo’s byte length (Length per letter: English - 1, Korean - 3)                        |
+| suggestions   | List    | List of recommended words for typos (Recommendation ranking ascending order)           |
+| suggestion    | String  | Recommended words for typos                                                            |
+| type          | Integer | Correction method of recommended words 1: space2: spelling3: dictionary recommendation |
+| elaspedTime   | Integer | api time required for typo analysis                                                    |
 
 A Guide to Speed up the Response
 --------------------------------
