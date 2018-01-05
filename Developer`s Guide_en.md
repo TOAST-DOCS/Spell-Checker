@@ -71,7 +71,7 @@ Spelling check does not support typos in English or other languages.
 | length        | int     | Typo’s byte length(Length per letter: English - 1, UTF8 - 3)                           |
 | suggestions   | List    | List of recommended words for typos(Recommendation ranking ascending order)            |
 | suggestion    | String  | Recommended words for typos                                                            |
-| type          | int     | Correction type<br>1: suggestion from standard language<br>2: spacing<br>3: spelling   |
+| type          | int     | Correction type<br>1: spelling<br>2: spacing<br>3: suggestion from standard language   |
 | elaspedTime   | int     | api time required for typo analysis                                                    |
 
 A Guide to Speed up the Response

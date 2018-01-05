@@ -76,7 +76,7 @@ POST http://api-spell-checker.cloud.toast.com/spell-checker/v1.0/appkeys/{appkey
 | length | int | 오탈자의 바이트 길이(문자 당 길이: 영문 - 1, UTF8 - 3) |
 | suggestions | List | 오탈자의 교정 추천어 목록(추천 랭킹 오름차순 정렬) |
 | suggestion | String | 오탈자의 교정 추천어 |
-| type | int | 추천어의 교정 방식<br>1: 표준어 추정<br>2: 띄어쓰기<br>3: 맞춤법 |
+| type | int | 추천어의 교정 방식<br>1: 맞춤법<br>2: 띄어쓰기<br>3: 표준어 추정 |
 | elaspedTime | int | API 오탈자 분석 소요 시간 |
 
 
